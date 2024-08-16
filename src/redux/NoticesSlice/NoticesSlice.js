@@ -9,8 +9,8 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
-const newsSlice = createSlice({
-  name: "news",
+const noticesSlice = createSlice({
+  name: "notices",
   initialState: {
     items: [],
     isLoading: false,
@@ -21,5 +21,5 @@ const newsSlice = createSlice({
   },
 });
 
-const newsReducer = newsSlice.reducer;
-export default newsReducer;
+const noticesReducer = noticesSlice.reducer;
+export default noticesReducer;
