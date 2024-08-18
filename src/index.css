@@ -1,5 +1,9 @@
 :root {
   --main-white-color: #f9f9f9;
+
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 a,
