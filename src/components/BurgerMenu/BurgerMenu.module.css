@@ -1,11 +1,9 @@
 .burgerMenu {
-  position: relative;
+  /* position: relative; */
 }
 
 .burgerIcon {
   cursor: pointer;
-
-  z-index: 101;
 }
 
 .icon {
@@ -14,9 +12,12 @@
 }
 
 .closeIcon {
-  position: absolute;
   width: 32px;
   height: 32px;
+
+  position: absolute;
+
+  cursor: pointer;
 
   top: 28px;
   right: 20px;
