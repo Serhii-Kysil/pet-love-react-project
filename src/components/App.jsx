@@ -11,7 +11,7 @@ const NoticesPage = lazy(() => import("../pages/NoticesPage/NoticesPage"));
 
 function App() {
   return (
-    <>
+    <div className="container">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -21,7 +21,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
-    </>
+    </div>
   );
 }
 
