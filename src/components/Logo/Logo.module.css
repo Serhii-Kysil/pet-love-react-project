@@ -1,4 +1,17 @@
+.logoCont {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
 .logoText {
+  font-family: Manrope;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: -0.04em;
+
+  color: #262626;
 }
 
 .logoIcon {

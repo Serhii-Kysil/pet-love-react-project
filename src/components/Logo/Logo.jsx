@@ -10,7 +10,7 @@ export const Logo = () => {
       <NavLink className={css.link} to="/">
         <div className={css.logoCont}>
           <span className={css.logoText}>
-            Petl
+            petl
             <FaHeart className={css.logoIcon} />
             ve
           </span>
