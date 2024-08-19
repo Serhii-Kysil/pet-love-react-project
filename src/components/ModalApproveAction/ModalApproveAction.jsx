@@ -44,9 +44,19 @@ export const ModalApproveAction = ({ isOpen, onClose, children }) => {
                 <IoMdClose className={css.icon} />
               </button>
               {children}
-              <div className={css.contant}>
-                <div className={css.iconBlock}>
-                  <FaCat className={css.catIcon} />
+
+              <div className={css.iconBlock}>
+                <FaCat className={css.catIcon} />
+              </div>
+              <div className={css.textBlock}>
+                <p className={css.question}>Already leaving?</p>
+                <div className={css.btns}>
+                  <button type="button" className={css.btnYes}>
+                    Yes
+                  </button>
+                  <button type="button" className={css.btnCancel}>
+                    Cancel
+                  </button>
                 </div>
               </div>
             </div>
