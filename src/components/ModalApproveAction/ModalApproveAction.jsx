@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import css from "./ModalApproveAction.module.css";
 
 import { IoMdClose } from "react-icons/io";
+import { FaCat } from "react-icons/fa";
 
 export const ModalApproveAction = ({ isOpen, onClose, children }) => {
   const onWrapperClick = (event) => {
@@ -43,6 +44,11 @@ export const ModalApproveAction = ({ isOpen, onClose, children }) => {
                 <IoMdClose className={css.icon} />
               </button>
               {children}
+              <div className={css.contant}>
+                <div className={css.iconBlock}>
+                  <FaCat className={css.catIcon} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
