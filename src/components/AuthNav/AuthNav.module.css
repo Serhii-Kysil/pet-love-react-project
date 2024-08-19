@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 40px;
+}
+.logBtn,
+.regBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  outline: none;
+  padding: 12px 67px 12px 67px;
+  border-radius: 30px;
+  width: 178px;
+
+  text-transform: uppercase;
+  cursor: pointer;
+
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.03em;
+}
+.logBtn {
+  background: #f6b83d;
+  color: #ffffff;
+}
+.regBtn {
+  background: #fff4df;
+  color: #f6b83d;
+}

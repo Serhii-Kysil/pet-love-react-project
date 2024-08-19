@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export const Navigation = () => {
   return (
-    <nav>
+    <nav className={css.navigation}>
       <NavLink to="/news">
         <button className={css.btn}>News</button>
       </NavLink>
