@@ -1,0 +1,75 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  transition: opacity 0.3s;
+  z-index: 999;
+}
+
+.modalWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modalContent {
+  position: relative;
+  margin: 20px;
+  width: 100%;
+  max-width: 566px;
+  max-height: 80%;
+  border-radius: 30px;
+  background-color: #ffffff;
+  padding: 64px;
+  overflow-y: auto;
+  transform: translateY(-50px);
+  transition: opacity 0.3s, transform 0.3s;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modalContent::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.closeBtn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  transition: var(--animation);
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: #ffdc86;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

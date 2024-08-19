@@ -1,6 +1,12 @@
+import { ModalApproveAction } from "../../components/ModalApproveAction/ModalApproveAction";
+
 import css from "./HomePage.module.css";
 
+import { useState } from "react";
+
 export default function HomePage() {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
     <div className={css.homePageCont}>
       <div className={css.mainInfoBlock}>
@@ -19,6 +25,7 @@ export default function HomePage() {
         src="/main-img@1x.jpg"
         alt="Dog image"
       />
+      <ModalApproveAction isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </div>
   );
 }
