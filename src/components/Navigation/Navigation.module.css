@@ -1,4 +1,37 @@
 .navigation {
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  margin-top: 236px;
+  margin-bottom: 280px;
+
+  gap: 10px;
+}
+.btnNews,
+.btnFind,
+.btnFriend {
+  border-radius: 30px;
+  border: 1px solid #26262626;
+  background-color: transparent;
+  outline: none;
+
+  width: 119px;
+
+  color: #262626;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.03em;
+  text-align: left;
+}
+.btnNews {
+  padding: 15px 39px;
+}
+.btnFind {
+  padding: 15px 31px;
+}
+.btnFriend {
+  padding: 15px 20px;
 }
