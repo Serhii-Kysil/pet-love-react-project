@@ -1,5 +1,7 @@
 import css from "./Logo.module.css";
 
+import { FaHeart } from "react-icons/fa";
+
 import { NavLink } from "react-router-dom";
 
 export const Logo = () => {
@@ -7,7 +9,11 @@ export const Logo = () => {
     <>
       <NavLink className={css.link} to="/">
         <div className={css.logoCont}>
-          <span>Petlove</span>
+          <span className={css.logoText}>
+            Petl
+            <FaHeart className={css.logoIcon} />
+            ve
+          </span>
         </div>
       </NavLink>
     </>
