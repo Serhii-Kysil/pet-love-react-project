@@ -25,6 +25,8 @@
   line-height: 18px;
   letter-spacing: -0.03em;
   text-align: left;
+
+  cursor: pointer;
 }
 .btnNews {
   padding: 15px 39px;
