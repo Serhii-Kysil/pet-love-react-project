@@ -1,0 +1,49 @@
+.homePageCont {
+}
+
+.mainInfoBlock {
+  background-color: #f6b83d;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  color: #ffffff;
+}
+.title {
+  font-family: Manrope;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.03em;
+}
+.span {
+  font-family: Manrope;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.03em;
+
+  color: #ffffff66;
+}
+.info {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+.img {
+  object-fit: cover;
+  scale: crop;
+  width: 100%;
+  max-width: 335px;
+  height: 402px;
+  border-radius: 30px;
+}
