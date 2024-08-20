@@ -21,8 +21,8 @@ export default function HomePage() {
 
       <img
         className={css.img}
-        srcSet="/main-img@2x.jpg, /main-img@3x.jpg"
-        src="/main-img@1x.jpg"
+        srcSet="/main-img/main-img@2x.jpg, /main-img/main-img@3x.jpg"
+        src="/main-img/main-img@1x.jpg"
         alt="Dog image"
       />
       <ModalApproveAction isOpen={isOpen} onClose={() => setIsOpen(false)} />

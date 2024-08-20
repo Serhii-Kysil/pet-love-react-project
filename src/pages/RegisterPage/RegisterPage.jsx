@@ -8,9 +8,9 @@ const RegisterPage = () => {
   return (
     <div className={css.registerCont}>
       <PetBlock
-        img1x={"/Cat@1x.png"}
-        img2x={"/Cat@2x.png"}
-        img3x={"/Cat@3x.png"}
+        img1x={"/Cat/Cat@1x.png"}
+        img2x={"/Cat/Cat@2x.png"}
+        img3x={"/Cat/Cat@3x.png"}
         alt={"Cat image"}
       />
       <div className={css.formContainer}>
