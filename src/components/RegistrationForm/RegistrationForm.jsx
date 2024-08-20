@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 import css from "./RegistrationForm.module.css";
 
+import { BiCheck } from "react-icons/bi";
+import { RxCross2 } from "react-icons/rx";
+
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
   email: yup
@@ -31,6 +34,7 @@ const RegistrationForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    trigger,
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -38,6 +42,10 @@ const RegistrationForm = () => {
   const onSubmit = (data) => {
     console.log(data);
     navigate("/profile");
+  };
+
+  const handleInputChange = async (fieldName) => {
+    await trigger(fieldName);
   };
 
   return (
@@ -49,16 +57,27 @@ const RegistrationForm = () => {
             placeholder="Name"
             className={css.input}
           />
-          <p>{errors.name?.message}</p>
+          <p className={css.error}>{errors.name?.message}</p>
         </div>
 
         <div className={css.emailBlock}>
-          <input
-            {...register("email")}
-            placeholder="Email"
-            className={css.input}
-          />
-          <p>{errors.email?.message}</p>
+          <div className={css.inputWrapper}>
+            <input
+              {...register("email")}
+              placeholder="Email"
+              className={`${css.input} ${
+                errors.email ? css.errorInput : css.successInput
+              }`}
+              onChange={() => handleInputChange("email")}
+              onBlur={() => handleInputChange("email")}
+            />
+            {errors.email ? (
+              <RxCross2 className={css.iconError} />
+            ) : (
+              <BiCheck className={css.iconSuccess} />
+            )}
+          </div>
+          <p className={css.error}>{errors.email?.message} </p>
         </div>
 
         <div className={css.passwordBlock}>
@@ -68,7 +87,7 @@ const RegistrationForm = () => {
             placeholder="Password"
             className={css.input}
           />
-          <p>{errors.password?.message}</p>
+          <p className={css.error}>{errors.password?.message}</p>
         </div>
 
         <div className={css.confirmBlock}>
@@ -78,7 +97,7 @@ const RegistrationForm = () => {
             placeholder="Confirm password"
             className={css.input}
           />
-          <p>{errors.confirmPassword?.message}</p>
+          <p className={css.error}>{errors.confirmPassword?.message}</p>
         </div>
       </div>
 

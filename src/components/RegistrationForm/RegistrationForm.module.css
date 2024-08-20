@@ -68,3 +68,42 @@
 
   color: #f6b83d;
 }
+.error {
+  margin-left: 12px;
+  margin-top: 2px;
+
+  color: #ef2447;
+
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 12px;
+  letter-spacing: -0.03em;
+  text-align: left;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.iconError,
+.iconSuccess {
+  position: absolute;
+  right: 12px;
+
+  width: 18px;
+  height: 18px;
+}
+.iconSuccess {
+  fill: #08aa83;
+}
+.successInput {
+  border: 1px solid #08aa83;
+}
+
+.iconError {
+  fill: #ef2447;
+}
+.errorInput {
+  border: 1px solid #ef2447;
+}
