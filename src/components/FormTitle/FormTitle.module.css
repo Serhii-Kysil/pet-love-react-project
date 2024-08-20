@@ -1,0 +1,25 @@
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-family: Manrope;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.04em;
+
+  color: #262626;
+}
+
+.desc {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+
+  color: #262626;
+}
