@@ -1,5 +1,7 @@
+import FormTitle from "../../components/FormTitle/FormTitle";
 import PetBlock from "../../components/PetBlock/PetBlock";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+
 import css from "./RegisterPage.module.css";
 
 const RegisterPage = () => {
@@ -12,6 +14,10 @@ const RegisterPage = () => {
         alt={"Cat image"}
       />
       <div className={css.formContainer}>
+        <FormTitle
+          title={"Registration"}
+          desc={"Thank you for your interest in our platform."}
+        />
         <RegistrationForm />
       </div>
     </div>

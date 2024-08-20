@@ -3,6 +3,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 
+import css from "./RegistrationForm.module.css";
+
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
   email: yup
@@ -40,35 +42,53 @@ const RegistrationForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <input {...register("name")} placeholder="Name" />
-        <p>{errors.name?.message}</p>
-      </div>
+      <div className={css.inputsCont}>
+        <div className={css.nameBlock}>
+          <input
+            {...register("name")}
+            placeholder="Name"
+            className={css.input}
+          />
+          <p>{errors.name?.message}</p>
+        </div>
 
-      <div>
-        <input {...register("email")} placeholder="Email" />
-        <p>{errors.email?.message}</p>
-      </div>
+        <div className={css.emailBlock}>
+          <input
+            {...register("email")}
+            placeholder="Email"
+            className={css.input}
+          />
+          <p>{errors.email?.message}</p>
+        </div>
 
-      <div>
-        <input
-          type="password"
-          {...register("password")}
-          placeholder="Password"
-        />
-        <p>{errors.password?.message}</p>
-      </div>
+        <div className={css.passwordBlock}>
+          <input
+            type="password"
+            {...register("password")}
+            placeholder="Password"
+            className={css.input}
+          />
+          <p>{errors.password?.message}</p>
+        </div>
 
-      <div>
-        <input
-          type="password"
-          {...register("confirmPassword")}
-          placeholder="Confirm password"
-        />
-        <p>{errors.confirmPassword?.message}</p>
+        <div className={css.confirmBlock}>
+          <input
+            type="password"
+            {...register("confirmPassword")}
+            placeholder="Confirm password"
+            className={css.input}
+          />
+          <p>{errors.confirmPassword?.message}</p>
+        </div>
       </div>
 
       <button type="submit">Registration</button>
+      <p>
+        Already have an account?{" "}
+        <a href="/login" className={css.link}>
+          Login
+        </a>
+      </p>
     </form>
   );
 };
