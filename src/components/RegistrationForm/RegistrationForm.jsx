@@ -41,7 +41,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
       <div className={css.inputsCont}>
         <div className={css.nameBlock}>
           <input
@@ -82,8 +82,10 @@ const RegistrationForm = () => {
         </div>
       </div>
 
-      <button type="submit">Registration</button>
-      <p>
+      <button type="submit" className={css.submitBtn}>
+        Registration
+      </button>
+      <p className={css.text}>
         Already have an account?{" "}
         <a href="/login" className={css.link}>
           Login

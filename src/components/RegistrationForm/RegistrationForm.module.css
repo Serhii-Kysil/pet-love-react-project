@@ -2,7 +2,14 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  margin-bottom: 24px;
 }
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
 .input {
   border: 1px solid #26262626;
   padding-top: 12px;
@@ -11,14 +18,53 @@
   outline: none;
   width: 100%;
   border-radius: 30px;
-  max-width: 350px;
+  max-width: 295px;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.03em;
 }
 .input::placeholder {
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
   letter-spacing: -0.03em;
-  text-align: left;
 
   color: #26262680;
+}
+.submitBtn {
+  background: #f6b83d;
+  width: 295px;
+  padding: 12px 99px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.03em;
+
+  color: #ffffff;
+  text-transform: uppercase;
+
+  margin-bottom: 12px;
+}
+.text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: -0.03em;
+  text-align: center;
+
+  color: #26262680;
+}
+.link {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: -0.03em;
+
+  color: #f6b83d;
 }
