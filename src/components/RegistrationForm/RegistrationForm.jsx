@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -7,6 +8,7 @@ import css from "./RegistrationForm.module.css";
 
 import { BiCheck } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
@@ -29,6 +31,9 @@ const schema = yup.object().shape({
 
 const RegistrationForm = () => {
   const navigate = useNavigate();
+  const [touchedFields, setTouchedFields] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const {
     register,
@@ -46,6 +51,17 @@ const RegistrationForm = () => {
 
   const handleInputChange = async (fieldName) => {
     await trigger(fieldName);
+    setTouchedFields((prev) => ({ ...prev, [fieldName]: true }));
+  };
+
+  const isFieldTouched = (fieldName) => touchedFields[fieldName];
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword((prev) => !prev);
   };
 
   return (
@@ -66,37 +82,77 @@ const RegistrationForm = () => {
               {...register("email")}
               placeholder="Email"
               className={`${css.input} ${
-                errors.email ? css.errorInput : css.successInput
+                isFieldTouched("email") &&
+                (errors.email ? css.errorInput : css.successInput)
               }`}
-              onChange={() => handleInputChange("email")}
               onBlur={() => handleInputChange("email")}
             />
-            {errors.email ? (
-              <RxCross2 className={css.iconError} />
-            ) : (
-              <BiCheck className={css.iconSuccess} />
-            )}
+            {isFieldTouched("email") &&
+              (errors.email ? (
+                <RxCross2 className={css.iconErrorEmail} />
+              ) : (
+                <BiCheck className={css.iconSuccessEmail} />
+              ))}
           </div>
           <p className={css.error}>{errors.email?.message} </p>
         </div>
 
         <div className={css.passwordBlock}>
-          <input
-            type="password"
-            {...register("password")}
-            placeholder="Password"
-            className={css.input}
-          />
+          <div className={css.inputWrapper}>
+            <input
+              type={showPassword ? "text" : "password"}
+              {...register("password")}
+              placeholder="Password"
+              className={`${css.input} ${
+                isFieldTouched("password") &&
+                (errors.password ? css.errorInput : css.successInput)
+              }`}
+              onBlur={() => handleInputChange("password")}
+            />
+
+            <span onClick={togglePasswordVisibility} className={css.eyeIcon}>
+              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </span>
+
+            {isFieldTouched("password") &&
+              (errors.password ? (
+                <RxCross2 className={css.iconError} />
+              ) : (
+                <BiCheck className={css.iconSuccess} />
+              ))}
+          </div>
           <p className={css.error}>{errors.password?.message}</p>
         </div>
 
         <div className={css.confirmBlock}>
-          <input
-            type="password"
-            {...register("confirmPassword")}
-            placeholder="Confirm password"
-            className={css.input}
-          />
+          <div className={css.inputWrapper}>
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              {...register("confirmPassword")}
+              placeholder="Confirm password"
+              className={`${css.input} ${
+                isFieldTouched("confirmPassword") &&
+                (errors.confirmPassword ? css.errorInput : css.successInput)
+              }`}
+              onBlur={() => handleInputChange("confirmPassword")}
+            />
+            <span
+              onClick={toggleConfirmPasswordVisibility}
+              className={css.eyeIcon}
+            >
+              {showConfirmPassword ? (
+                <AiOutlineEyeInvisible />
+              ) : (
+                <AiOutlineEye />
+              )}
+            </span>
+            {isFieldTouched("confirmPassword") &&
+              (errors.confirmPassword ? (
+                <RxCross2 className={css.iconError} />
+              ) : (
+                <BiCheck className={css.iconSuccess} />
+              ))}
+          </div>
           <p className={css.error}>{errors.confirmPassword?.message}</p>
         </div>
       </div>

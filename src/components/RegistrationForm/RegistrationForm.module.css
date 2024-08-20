@@ -8,6 +8,9 @@
 .form {
   display: flex;
   flex-direction: column;
+
+  max-width: 295px;
+  width: 100%;
 }
 
 .input {
@@ -24,6 +27,8 @@
   font-weight: 500;
   line-height: 18px;
   letter-spacing: -0.03em;
+
+  display: flex;
 }
 .input::placeholder {
   font-size: 14px;
@@ -35,11 +40,17 @@
 }
 .submitBtn {
   background: #f6b83d;
-  width: 295px;
+
   padding: 12px 99px;
   border: none;
   outline: none;
   border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 295px;
+  width: 100%;
 
   font-size: 14px;
   font-weight: 600;
@@ -85,23 +96,43 @@
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 295px;
 }
 .iconError,
 .iconSuccess {
+  position: absolute;
+  right: 38px;
+
+  width: 18px;
+  height: 18px;
+}
+.iconErrorEmail,
+.iconSuccessEmail {
   position: absolute;
   right: 12px;
 
   width: 18px;
   height: 18px;
 }
-.iconSuccess {
+
+.eyeIcon {
+  position: absolute;
+  right: 12px;
+
+  width: 18px;
+  height: 18px;
+}
+.iconSuccess,
+.iconSuccessEmail {
   fill: #08aa83;
 }
 .successInput {
   border: 1px solid #08aa83;
 }
 
-.iconError {
+.iconError,
+.iconErrorEmail {
   color: #ef2447;
 }
 .errorInput {
