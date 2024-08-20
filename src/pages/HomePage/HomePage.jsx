@@ -5,7 +5,7 @@ import css from "./HomePage.module.css";
 import { useState } from "react";
 
 export default function HomePage() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={css.homePageCont}>
