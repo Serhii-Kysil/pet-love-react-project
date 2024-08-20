@@ -41,30 +41,34 @@ const RegistrationForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <label>Name</label>
-        <input {...register("name")} />
+        <input {...register("name")} placeholder="Name" />
         <p>{errors.name?.message}</p>
       </div>
 
       <div>
-        <label>Email</label>
-        <input {...register("email")} />
+        <input {...register("email")} placeholder="Email" />
         <p>{errors.email?.message}</p>
       </div>
 
       <div>
-        <label>Password</label>
-        <input type="password" {...register("password")} />
+        <input
+          type="password"
+          {...register("password")}
+          placeholder="Password"
+        />
         <p>{errors.password?.message}</p>
       </div>
 
       <div>
-        <label>Confirm Password</label>
-        <input type="password" {...register("confirmPassword")} />
+        <input
+          type="password"
+          {...register("confirmPassword")}
+          placeholder="Confirm password"
+        />
         <p>{errors.confirmPassword?.message}</p>
       </div>
 
-      <button type="submit">Register</button>
+      <button type="submit">Registration</button>
     </form>
   );
 };

@@ -1,4 +1,5 @@
 import PetBlock from "../../components/PetBlock/PetBlock";
+import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 import css from "./RegisterPage.module.css";
 
 const RegisterPage = () => {
@@ -10,6 +11,9 @@ const RegisterPage = () => {
         img3x={"/Cat@3x.png"}
         alt={"Cat image"}
       />
+      <div className={css.formContainer}>
+        <RegistrationForm />
+      </div>
     </div>
   );
 };
